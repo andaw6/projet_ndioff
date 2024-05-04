@@ -1,0 +1,61 @@
+
+/* Le style pour la pagination */
+#pagination{
+    height: 50px;
+    padding: 0 2em;
+    font-size: 1.5em;
+    border-radius: 50px;
+    border-bottom: 1px solid var(--color-grey);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 5px;
+}
+#pagination .content-left,
+#pagination .content-right{
+    align-items: center;
+    gap: 5px;
+}
+#pagination .content-right .info,
+#pagination .content-left span{
+    font-size: .8em;
+    color: var(--color-grey);
+}
+#pagination select{
+    background-color: transparent;
+    font-size: .9em;
+    font-weight: 700;
+    color: var(--color-grey);
+}
+#pagination button{
+    background-color: transparent;
+    font-size: 1.2em;
+    color: var(--color-grey);
+ 
+}
+#pagination button:hover{
+    border: 2px solid;
+}
+#pagination .content-right{
+    gap: 25px;
+} 
+
+
+
+@media screen and (max-width: 920px) {
+    #pagination{
+        flex-direction: column;
+        height: max-content;
+    }
+    #pagination>div{
+        width: 100%;
+        flex: 1;
+    }
+    #pagination .content-right{
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #pagination .content-left{
+        justify-content: center;
+    }
+}

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application gestion des étudiants d'orange digital center</title>
+    <link rel="stylesheet" href="/css/page.css">
+    <!-- le link le boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Le link pour le cdn de font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/root.js" defer></script>
+    <script type="module" src="js/script.js"></script>
+</head>
+k
+<body>
+    <!-- Le conteneur principal qui contient tout la page -->
+    <div id="container" class="flex">
+        <!-- le boutton pour le menu -->
+        <input type="checkbox" id="slider">
+
+        <!-- On inclut le side bar ou la barre latéral qui permet la navigation -->
+        <!-- Le side bar ou la barre latéral pour la navigation -->
+        <aside id="side-bar" class="flex-col">
+            <div class="aside-header flex-col">
+                <div class="aside-logo flex-cc">
+                    <img src="/img/logo.png" alt="">
+                </div>
+                <div class="aside-info flex">
+                    <span class="bar"></span>
+                    <span class="label">menu</span>
+                </div>
+            </div>
+            <!-- La bare de navigation -->
+            <nav class="flex-col">
+                <a id="das">
+                    <span class="icon">
+                        <i class='bx bx-menu-alt-right'></i>
+                    </span>
+                    <span class="icon-label">Dashboard</span>
+                </a>
+
+                <a id="pro">
+                    <span class="icon">
+                        <i class='bx bx-spreadsheet'></i>
+                    </span>
+                    <span class="icon-label">Promos</span>
+                </a>
+
+                <a id="ref">
+                    <span class="icon">
+                        <i class='bx bx-calendar'></i>
+                    </span>
+                    <span class="icon-label">Référentiels</span>
+                </a>
+
+                <a id="app">
+                    <span class="icon">
+                        <i class='bx bx-user'></i>
+                        <!-- <i class='bx bx-user-circle'></i> -->
+                    </span>
+                    <span class="icon-label">Utilisateur</span>
+                </a>
+
+                <a id="vis">
+                    <span class="icon">
+                        <i class='bx bx-user-circle'></i>
+                    </span>
+                    <span class="icon-label">Visiteurs</span>
+                </a>
+
+                <a id="pre">
+                    <span class="icon">
+                        <i class='bx bx-user-circle'></i>
+                    </span>
+                    <span class="icon-label">Presence</span>
+                </a>
+
+                <a id="eve">
+                    <span class="icon">
+                        <i class='bx bx-calendar'></i>
+                    </span>
+                    <span class="icon-label">Evénements</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Le contenu principal de la page -->
+        <div id="content-page">
+            <!-- On inclut le header ou l'en-tête de la page -->
+            <!-- L'en-tête de la page ou le header -->
+            <header id="header" class="flex-sbc">
+
+                <!-- La parti gauche de l'en-tête -->
+                <form method="post" class="content-left flex">
+                    <!-- <input type="checkbox" id="menu-btn"> -->
+                    <span class="box-icon flex-cc">
+                        <i class='bx bx-grid-alt'></i>
+                    </span>
+                    <div class="box-input flex">
+                        <input type="text" name="filter" class="input" placeholder="Recherche par matricule">
+                        <span class="box-icon flex-cc">
+                            <i class='bx bx-search'></i>
+                        </span>
+                    </div>
+                </form>
+
+                <!-- La parti droite de l'en-tête -->
+                <div class="content-right flex">
+                    <!-- la parti calendrier pour afficher la date actuel -->
+                    <div class="calendar flex">
+                        <div class="icon flex-cc">
+                            <i class='bx bx-calendar-minus'></i>
+                        </div>
+                        <span class="date">
+
+                        </span>
+                    </div>
+
+                    <!-- La parti pour les inforamtions de l'utilisateur actuel -->
+                    <div class="user-info flex">
+                        <div class="logo flex-cc">
+                            <img src="/img/profil/" alt="">
+                        </div>
+                        <form class="users flex-col" method="post">
+                            <div class="user-name">
+
+                            </div>
+                            <select name="select-user" class="select-users" onchange="this.form.submit();">
+                                <option value="admin" selected>
+
+                                </option>
+                                <option value="deconnexion">déconnexion</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+
+            </header>
+            <div id="main">
+
+                <!-- On affiche le contenue de la page qui sera stocker dans la variable content_pages -->
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <section id="dashboard" class="page">
+                    <!-- L'en-tête de la page -->
+                    <header class="flex-sbc">
+                        <div class="content-left">
+                            <a href="?page=pro" class="bold" style="cursor: pointer;">Promotions</a>
+                        </div>
+                        <div class="content-right">
+                            <span class="bold">Promos</span>
+                            <span><i class='bx bx-chevron-right'></i></span>
+                            <span class="bold">Liste</span>
+                            <span><i class='bx bx-chevron-right'></i></span>
+                            <span class="bold">Détails</span>
+                        </div>
+                    </header>
+
+                    <!-- Là où on doit mettre la views qu'on veut afficher -->
+                    <!-- Le contenue du dashboard -->
+                    <main id="sect-main" class="flex-col" style="gap: 20px;">
+
+                        <!-- La division pour les informations du promotion active -->
+                        <div id="promo-info">
+
+                            <!-- Le première box pour les détails du promotion active -->
+                            <div class="box box1">
+                                <div class="logo">
+                                    <img src="../img/ref/image.png" alt="">
+                                </div>
+                                <div class="content-box">
+                                    <div class="col">
+                                        <span class="col-hd">Libelle:</span>
+                                        <span class="teal">
+
+                                        </span>
+                                    </div>
+
+                                    <div class="col">
+                                        <span class="col-hd">Date Fin Prévue:</span>
+                                        <span class="teal">
+
+                                        </span>
+                                    </div>
+
+                                    <div class="col">
+                                        <span class="col-hd">Date Début:</span>
+                                        <span class="teal">
+                                        </span>
+                                    </div>
+
+                                    <div class="col">
+                                        <span class="col-hd">Date Fin Réelle:</span>
+                                        <span class="teal">
+
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Le deuxième box pour les référentiels d'une promotion active -->
+                            <div class="box box2">
+                                <div class="logo">
+                                    <span>
+                                        <img src="/img/target.svg" alt="">
+                                    </span>
+                                </div>
+                                <div class="content-box">
+                                    <div class="flex-col">
+                                        <span>Nombre de Référentiels</span>
+                                        <span class="nb">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Le troisième box pour les apprenants actifs -->
+                            <div class="box box3">
+                                <div class="logo">
+                                    <span>
+                                        <img src="/img/target.svg" alt="">
+                                    </span>
+                                </div>
+                                <div class="content-box">
+                                    <div class="flex-col">
+                                        <span>Nombre d'apprenants actifs</span>
+                                        <span class="nb">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Le quatrième box pour les apprenants inactifs -->
+                            <div class="box box4">
+                                <div class="logo">
+                                    <span>
+                                        <img src="/img/target.svg" alt="">
+                                    </span>
+                                </div>
+                                <div class="content-box">
+                                    <div class="flex-col">
+                                        <span>Nombre d'apprenants inactifs</span>
+                                        <span class="nb">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="list-content">
+                            <!-- La partie gauche du dashboard -->
+                            <div id="left">
+                                <!-- La division pour la liste des référentiels -->
+                                <div id="promo-list">
+                                    <!-- L'en-tête pour la liste des référentiels -->
+                                    <div class="head-promo flex-sbc">
+                                        <div class="content-left">
+                                            <span>Listes des Référentiels</span>
+                                        </div>
+                                        <div class="content-right">
+                                            <span class="icon">
+                                                <i class='bx bx-dots-horizontal-rounded'></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Le box qui contient la liste des référentiels -->
+                                    <div id="list" class="flex">
+                                        <!-- Le box pour un référentiel -->
+                                        <div class="boxInfo flex-cc">
+                                            <h1>Aucun référentiel n'a été trouver</h1>
+                                        </div>
+                                        <!-- <h2 style='text-align:center; margin-top:2em;'></h2> -->
+                                        <!-- <div class="box">
+                                            <div class="info flex">
+                                                <span class="bold label" style="margin-bottom: 5px;">
+                                                </span>
+                                            </div>
+                                            <div class="box-img">
+                                                <img src="/img/ref/" alt="">
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- La partie droite du dashboard -->
+                            <div id="right" class="flex- col">
+                                <!-- La division pour les genres -->
+                                <div id="genre" class="flex-col">
+                                    <!-- l'en-tête de la partie pour les genres -->
+                                    <div class="header-section">
+                                        <h3>genre</h3>
+                                    </div>
+                                    <!-- La division pour les contenues  -->
+                                    <div class="content-genre flex-col">
+                                        <div class="group flex-sbc">
+                                            <div class="left flex">
+                                                <div class="progresse pg1">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                        aria-valuemin="0" aria-valuemax="100" data-text="90%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <span class="label">Féminin</span>
+                                                <span><i class='bx bx-chevron-right'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="group flex-sbc">
+                                            <div class="left flex">
+                                                <div class="progresse pg2">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                        aria-valuemin="0" aria-valuemax="100" data-text="30%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <span class="label">Masculin</span>
+                                                <span><i class='bx bx-chevron-right'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="group flex-sbc">
+                                            <div class="left flex">
+                                                <div class="progresse pg3">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                        aria-valuemin="0" aria-valuemax="100" data-text="90%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <span class="label">Taux d'insertion</span>
+                                                <span><i class='bx bx-chevron-right'></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- La division pour les insertions -->
+                                <div id="insertion">
+                                    <!-- L'en-tête de la partie insertion -->
+                                    <div class="header-section flex-sbc">
+                                        <div class="content-left">
+                                            <h3>Insertion</h3>
+                                        </div>
+                                        <div class="content-right">
+                                            <span class="icon">
+                                                <i class='bx bx-dots-horizontal-rounded'></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- Le contenue de la partie insertions -->
+                                    <div class="content-insert">
+                                        <div class="progresse flex-cc">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                aria-valuemin="0" aria-valuemax="100" data-text="0%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </main>
+                    <script>
+                        $progresse = document.querySelectorAll("#right #genre .group .progresse .progress-bar");
+                        for (const prog of $progresse) {
+                            let taux = prog.getAttribute("data-text").split("%")[0];
+                            if (!taux) taux = "0";
+                            taux = parseInt(taux);
+                            prog.style.background = `radial-gradient(closest-side,  var(--color-white) 79%, transparent 80% 100%),conic-gradient(#8720c4 ${taux}%, #CCC 0%)`;
+                        }
+                    </script>
+                </section>
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+                <!-- La page pour les présences -->
+                <section id="presence" class="page active">
+                    <header class="flex-col">
+                        <div id="header1" class="flex-sbc">
+                            <div class="content-left">
+                                <span class="bold">Présence</span>
+                            </div>
+                            <div class="content-right">
+                                <span>Présence</span>
+                                <span>></span>
+                                <span class="bold">Liste</span>
+                            </div>
+                        </div>
+                        <div id="header2" class="flex-sbc">
+                            <div class="first">
+                                <span>Promotion:</span>
+                                <a></a>
+                            </div>
+                            <form class="second" method="post" id="select">
+                                <input type="hidden" name="filter-ref" value="filter">
+                                <span>Référentiel:</span>
+                                <select name="ref" class="info-promo bold" onchange="this.form.submit();">
+                                    <option value="">Tous</option>
+                                    <option></option>
+                                    <option value=""></option>
+                                </select>
+                            </form>
+                        </div>
+                    </header>
+                    <div>
+                        <!-- le code pour le formulaire de filtre -->
+                        <section>
+                            <form method="post" id="filter" class="flex">
+                                <input type="hidden" name="action" value="filter">
+                                <div class="boite status flex-cc">
+                                    <select name="status" id="select-status">
+                                        <option value="">Status</option>
+                                        <option value="present">present</option>
+                                        <option value="absent">absent</option>
+                                    </select>
+                                </div>
+                                <div class="boite reference flex-cc">
+                                    <select name="ref" id="select-ref">
+                                        <option> Reférenciel</option>
+                                        <option>
+
+                                        </option>
+                                        <option value="">
+
+                                        </option>
+
+                                    </select>
+                                </div>
+                                <div class="boite clandrier flex-cc">
+                                    <input type="date" name="date" value="">
+                                </div>
+                                <div class="boite button flex-cc">
+                                    <button type="submit" name="refraiche">rafraichir</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <!-- le code pour la liste des présences -->
+                        <table class="flex-col">
+
+                            <h2 style='text-align:center; margin-top:2em;'>Aucun présence n'a été trouver</h2>
+                            <tr>
+                                <td><span class="head hd-mat"></span><span class="content matricule">
+                                    </span></td>
+                                <td><span class="head hd-nom"></span><span class="content">
+                                    </span></td>
+                                <td><span class="head hd-prenom"></span><span class="content">
+                                    </span></td>
+                                <td><span class="head hd-tel"></span><span class="content">
+                                    </span></td>
+                                <td><span class="head hd-ref"></span><span class="content">
+                                    </span></td>
+                                <td><span class="head hd-date"></span><span class="content">
+                                    </span></td>
+                                <td><span class="head hd-heure"></span><span class="content">
+                                    </span></td>
+                                <td><span class="head hd-status"></span><span class="content"><span>
+                                        </span></span></td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                </section>
+
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- La page pour les événemantes -->
+                <section id="evenement" class="page">
+                    <div class="content-event">
+                        <header class="flex-col">
+                            <form method="post" id="header1" class="flex-sbc">
+                                <div class="content-left flex">
+                                    <button type="submit" class="info" name="add">+ Ajouter</button>
+                                </div>
+                                <div class="content-right flex">
+                                    <div class="saisi">
+                                        <input type="text" name="search" placeholder="Entrrez une plage de date">
+                                        <span class="required">*</span>
+                                        <span class="icon">
+                                            <i class='bx bx-calendar'></i>
+                                        </span>
+                                    </div>
+                                    <button type="submit" name="validate">Valider</button>
+                                </div>
+                            </form>
+                            <div id="header2" class="flex-sbc">
+                                <div class="content-left flex">
+                                    <span>
+                                    </span>
+                                </div>
+                                <div class="content-right flex">
+                                    <a href="?today" class="btn flex-cc">Aujourd'hui</a>
+                                    <div class="swicth flex">
+                                        <a class="flex-cc" href="?move=1">
+                                            <span>
+                                                < </span>
+                                        </a>
+                                        <a class="flex-cc" href="?move=2">
+                                            <span> > </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div id="event" class="flex">
+                            <div class="left">
+                                <div class="head">
+                                    <div class="first"></div>
+                                    <div class="last flex-col">
+                                        <span>Toute</span>
+                                        <span>la</span>
+                                        <span>journée</span>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="flex-cc">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="head">
+                                    <div class="first">
+                                        <div class="col flex-cc">lun.
+                                        </div>
+                                        <div class="col flex-cc">Mar.
+                                        </div>
+                                        <div class="col flex-cc">Mer.
+                                        </div>
+                                        <div class="col flex-cc">Jeu.
+                                        </div>
+                                        <div class="col flex-cc">Veu.
+                                        </div>
+                                    </div>
+                                    <div class="last">
+                                        <div class="col"></div>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="ligne">
+                                        <div class="col"></div>
+                                    </div>
+                                </div>
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- La page pour les promotions -->
+                <section id="promotion" class="page">
+                    <header class="flex-sbc">
+                        <div class="content-left">
+                            <span class="bold">Promotions</span>
+                        </div>
+                        <div class="content-right">
+                            <a class="bold" style="display: inline;">Promos</a>
+                            <span><i class='bx bx-chevron-right'></i></span>
+                            <span class="bold">Création</span>
+                        </div>
+                    </header>
+
+                    <div id="content-promo" class="page">
+                        <!-- La view qu'on veut afficher -->
+                        <div id="list-promo">
+                            <header class="flex-sbc">
+                                <div class="content-left flex">
+                                    <span class="text bold">Liste des promotions</span>
+                                    <span class="nb-promo bold"></span>
+                                </div>
+                                <form class="content-right flex-sbc" method="post" name="filter">
+                                    <div class="search">
+                                        <input type="text" name="filter" placeholder="Rechercher ici ...">
+                                        <span type="submit" class="icon flex-cc">
+                                            <i class='bx bx-search'></i>
+                                        </span>
+                                    </div>
+                                    <button id="btn-add">
+                                        <a>+ nouvelle</a>
+                                    </button>
+                                </form>
+                            </header>
+                            <!-- La partie ou on doit afficher la liste des apprenant -->
+                            <table class="flex-col">
+
+                                <h2 style='text-align:center; margin-top:2em;'>Aucun promotion n'a été trouver</h2>
+
+                                <tr>
+                                    <td>
+                                        <span class="head"></span>
+                                        <div class="content flex-cc">
+                                            <span class="icon">
+                                                <i class='bx bx-aperture'></i>
+                                            </span>
+                                            <span class="promo-name"></span>
+                                        </div>
+                                    </td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td><span class="head"></span><span class="content" data-text=""></span></td>
+                                    <td>
+                                        <span class="head"></span>
+                                        <span class="content">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="" id="">
+                                                <a></a>
+                                            </div>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Le code pour la pagination -->
+
+                        </div>
+
+
+                        <div id="parti1" class="page">
+                            <div class="flex head-promo">
+                                <div class="decor flex-cc"><span>1</span></div>
+                                <span class="bold">Promotion</span>
+                            </div>
+                            <div class="content-promo">
+                                <div class="form flex">
+                                    <form class="flex-col" method="post">
+                                        <div class="ligne flex-col">
+                                            <div class="box flex-col">
+                                                <label for="libelle">Libelle</label>
+                                                <div class="saisie">
+                                                    <input type="text" class="input-lbl" name="libelle"
+                                                        placeholder="Entrer le label" value="<?=$libelle?>">
+                                                    <span class="require">*</span>
+                                                </div>
+                                            </div>
+                                            <span class="msg-error lbl">Le libelle existe déja</span>
+                                        </div>
+                                        <div class="ligne flex ligne2">
+                                            <div class="box flex-col">
+                                                <label for="debut">Date Début</label>
+                                                <div class="saisie">
+                                                    <input type="date" name="debut" class="clendar" value="<?=$debut?>">
+                                                    <span class="require">*</span>
+                                                    <span class="box-icon"></span>
+                                                </div>
+                                            </div>
+                                            <div class="box flex-col">
+                                                <label for="fin">Date Fin</label>
+                                                <div class="saisie">
+                                                    <input type="date" name="fin" class="clendar" value="<?=$fin?>">
+                                                    <span class="require">*</span>
+                                                    <span class="box-icon"></span>
+                                                </div>
+                                            </div>
+                                            <span class="msg-error date1">La date est obligatoire</span>
+                                            <span class="msg-error date2">La date est obligatoire</span>
+                                            <span class="msg-error date0">Les dates doit avoir une ecarte de 4
+                                                mois</span>
+                                        </div>
+                                        <div class="buttons flex-sbc">
+                                            <button class="btn" type="submit" name="ap" value="ajout">Ajouter
+                                                Référentiel(s)</button>
+                                            <button class="btn" type="submit" name="ap" value="creer">Créer
+                                                Promotion</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="flex head-promo">
+                                <div class="decor flex-cc second"><span>2</span></div>
+                                <span class="bold">Référentiels</span>
+                            </div>
+                            <div class="content-ref"></div>
+                        </div>
+
+                        <div id="parti2" class="page">
+                            <div class="flex head-promo">
+                                <div class="decor flex-cc">
+                                    <a><i class='bx bxs-edit-alt'></i></a>
+                                </div>
+                                <span class="bold">Promotion</span>
+                            </div>
+                            <div class="content-promo">
+                                <div class="form flex">
+                                    <form class="flex-col"></form>
+                                </div>
+                            </div>
+                            <div class="flex head-promo">
+                                <div class="decor flex-cc"><span>2</span></div>
+                                <span class="bold">Référentiels</span>
+                            </div>
+                            <div class="content-ref">
+                                <form method="post">
+                                    <span>Selectioner un ou plusieurs référentiel(s)</span>
+                                    <ul>
+
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox">
+                                                <span class="mask"></span>
+                                            </div>
+                                            <label for=""></label>
+                                        </li>
+                                    </ul>
+                                    <div class="btns flex">
+                                        <button id="btn-return" type="submit" name="ap" value="back">back</button>
+                                        <button id="btn-create" type="submit" name="ap"
+                                            value="creer-ajout">Créer</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- Le popop pour l'activation d'un promotion -->
+                        <div id="msg-active">
+                            <a class="close flex-cc">X</a>
+                            <div class="msg">
+                                <span> </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- La page pour les referentiels -->
+
+                <section id="referentiel" class="page">
+                    <header class="flex-sbc">
+                        <div class="content-left">
+                            <span class="bold">Référentiels:</span>
+                            <a class="bold info-promo" href="?page=pro" style="display: inline-block;">
+                            </a>
+
+                        </div>
+                        <div class="content-right">
+                            <span class="">Référentiels</span>
+                            <span><i class='bx bx-chevron-right'></i></span>
+                            <span class="bold">Liste</span>
+                        </div>
+                    </header>
+
+                    <div id="section-referentiel" class="flex">
+                        <div class="content-ref flex">
+
+                            <div class="box">
+                                <div class="head flex">
+                                    <span class="icon">
+                                        <i class='bx bx-dots-horizontal-rounded'></i>
+                                    </span>
+                                </div>
+                                <div class="head-content flex-col">
+                                    <a class="box-img" href="">
+                                        <img src="/img/ref/" alt="">
+                                    </a>
+                                    <div class="info  flex-col">
+                                        <div class="info-name">
+                                        </div>
+                                        <a class="status">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-info flex-cc">
+                                <h1>aucun référentiel n'a été trouver</h1>
+                            </div>
+                        </div>
+                        <div class="add-ref flex">
+                            <div class="msg <?=$error?>"></div>
+                            <form class="box" method="post" enctype="multipart/form-data">
+                                <div class="head flex">
+                                    <span>Nouveau Referentiel</span>
+                                </div>
+                                <div class="head-content flex-col">
+
+                                    <div class="group">
+                                        <label for="libelle">Libelle</label>
+                                        <div class="saisie">
+                                            <span><i class="fa-regular fa-user"></i></span>
+                                            <input type="text" name="libelle" placeholder="Entrer le libelle" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="group">
+                                        <label for="desc">Description</label>
+                                        <div class="saisie">
+                                            <span><i class="fa-regular fa-user"></i></span>
+                                            <textarea name="desc" placeholder="Entrer le Description"
+                                                onblur="error_image(this);"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="group file flex">
+                                        <span id="msg">ajouter au promo</span>
+                                        <div id="box-switch" class="flex-cc">
+                                            <div class="switch">
+                                                <input type="checkbox" class="switch-slider" name="add-promo">
+                                            </div>
+                                        </div>
+                                        <div class="box-file flex">
+                                            <div class="image flex-cc">
+                                                <img src="img/ref/image.png" alt="">
+                                            </div>
+                                            <div class="box-input flex-cc">
+                                                <input type="file" name="inputFile" id="inputFile" class="input-file">
+                                                <label class="lbl-img flex-cc" id="select-img">Choisir image</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="group flex-cc">
+                                        <button type="submit" name="add-ref">Enregistrer</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="block-suces" class="page flex-cc" style="display: none;">
+                    <div class="popop flex-col">
+                        <div class="barre flex">
+                            <a href="?close" id="close" class="flex-cc">x</a>
+                        </div>
+                        <div class="message flex-cc">
+                            <span>Le référentiel a été ajouter avec succès</span>
+                            <span>mais n'est dans aucun promotion</span>
+                        </div>
+                        <div class="box-ref flex-cc">
+                            <div class="box">
+                                <div class="head flex">
+                                    <span class="icon">
+                                        <i class='bx bx-dots-horizontal-rounded'></i>
+                                    </span>
+                                </div>
+                                <div class="head-content flex-col">
+                                    <div class="box-img">
+                                        <img src="/img/ref/" alt="">
+                                    </div>
+                                    <div class="info  flex-col">
+                                        <div class="info-name">
+                                        </div>
+                                        <div class="status desactive">desactive</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- La page pour les visiteurs -->
+
+                <section id="visiteur" class="page">
+                    <h1>page visiteur</h1>
+                </section>
+
+
+
+
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+                <!-- La page pour les presences -->
+                <section id="apprenant" class="page">
+                    <header class="flex-col">
+                        <div id="header1" class="flex-sbc">
+                            <div class="content-left">
+                                <span class="bold">Apprenants</span>
+                            </div>
+                            <div class="content-right">
+                                <span>Promos</span>
+                                <span><i class='bx bx-chevron-right'></i></span>
+                                <span>Liste</span>
+                                <span><i class='bx bx-chevron-right'></i></span>
+                                <span>Détails</span>
+                                <span><i class='bx bx-chevron-right'></i></span>
+                                <span class="bold">Apprenants</span>
+                            </div>
+                        </div>
+                        <div id="header2" class="flex-sbc">
+                            <div class="first">
+                                <span>Promotion:</span>
+                                <a class="info" style="display: inline-block;"></a>
+                            </div>
+
+                            <!-- Le formulaire pour la sélection multiple -->
+                            <form method="post" class="select-mutiple" id="multiple">
+                                <input type="hidden" name="selected">
+                                <div class="select-label flex-sbc">
+                                    <input type="checkbox" id="selected" onclick="this.form.submit();" name="active">
+                                    <span class="selected-lbl">Referentiel</span>
+                                    <span class="icon"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="select-content">
+                                    <div class="option">
+                                        <input type="checkbox" name="tous">
+                                        <span class="label">Tous</span>
+                                    </div>
+                                    <div class="option">
+                                        <input type="checkbox" name="">
+                                        <label class="label" for=""></label>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </header>
+
+                    <div id="liste-apprenant">
+
+                        <div id="head-decor" class="flex">
+                            <div class="decor flex-cc">
+                                <span>1</span>
+                            </div>
+                            <span>Apprenants</span>
+                        </div>
+
+                        <div class="flex-col" id="content-head">
+
+                            <!-- La parti qui permet de faire des actions sur un apprenant -->
+                            <div class="header flex-sbc">
+                                <div class="content-left flex">
+                                    <span>Liste des Apprenants <span class="info">()</span></span>
+                                </div>
+                                <div class="content-right flex">
+                                    <div class="flex">
+                                        <a href="?add-app" class="btn flex add">
+                                            <span class="icon">+</span>
+                                            <span class="lbl">Nouveau</span>
+                                        </a>
+                                        <a href="?insert" class="btn flex insert">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-user"></i>
+                                            </span>
+                                            <span class="lbl">Insertion en masse</span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <a class="btn flex file" href="?download">
+                                            <div class="icon"><i class='bx bx-download'></i></div>
+                                            <span class="lbl">Fichier model</span>
+                                        </a>
+                                        <a href="?exclus" class="btn flex list">
+                                            <!-- <span class="icon"></span> -->
+                                            <span class="lbl">Liste des Exclus</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- La parti qui permet de filtrer les apprenants -->
+                            <div class=" search flex-col">
+                                <form id="form" method="post" class="flex" name="filter">
+                                    <div class="content-search">
+                                        <input type="hidden" name="filter1" value="true">
+                                        <input type="text" placeholder="Filter" name="filter" value="">
+
+                                        <span class="icon flex-cc">
+                                            <i class='bx bx-search'></i>
+                                        </span>
+                                    </div>
+
+                                    <button id="confirm">
+                                        <a href="?page=1">
+                                            <i class='bx bx-reset'></i>
+                                        </a>
+                                    </button>
+                                </form>
+
+                                <div class="box-icon">
+                                    <img src="/img/dossier.png">
+                                </div>
+                            </div>
+
+                            <!-- La partie ou on doit afficher la liste des apprenant -->
+                            <table class="flex-col">
+
+                                <div class="boxInfo">
+                                    <h1>Aucun apprenant n'a été trouver</h1>
+                                </div>
+                                <tr>
+                                    <td>
+                                        <span class="head"></span>
+                                        <span class="content flex-cc">
+                                            <img src="/img/profil/" alt="">
+                                        </span>
+                                    </td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td><span class="head"></span><span class="content"></span></td>
+                                    <td>
+                                        <span class="head"></span>
+                                        <span class="content">
+                                            <form action="" method="post">
+                                                <input type="hidden" name="apprenant" value="">
+                                                <select name="action" onchange="this.form.submit();">
+                                                    <option value="">action</option>
+                                                    <option value="modifier">Modifier</option>
+                                                    <option value="afficher">Afficher</option>
+                                                </select>
+                                            </form>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <!-- Le code pour la pagination -->
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+                <!-- On inclut le footer ou bas de page -->
+                <footer id="footer" class="flex-cc">
+                    <div class="content"> &copy; Sonatel Academy</div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Le boutton floattant pour les paramètres -->
+        <button id="setting" class="flex-cc">
+            <i class='bx bxs-cog'></i>
+        </button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+#promotion header{
+    font-size: 1.2em;
+    height: 80px;
+}
+#promotion header .content-right{
+    font-size: .8em;
+}
+#promotion #content-promo{
+    width: 100%;
+    min-height: 200px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px 1px #0000001a;
+    padding: 30px;
+    background-color: var(--color-white);
+    position: relative;
+}
+#promotion .msg-error{
+    position: absolute;
+    color: red;
+    bottom: -20px;
+    left: 2%;
+    display: none;
+}
+#promotion .msg-error.active{
+    display: block;
+}
+#promotion .msg-error.date2{
+    left: auto;
+    right: 35%;
+}
+
+#promotion .msg-error.date0{
+    left: 40%;
+}
+
+
+
+/* Le style pour la liste des promotions */
+#list-promo{
+    width: 100%;
+    box-shadow: 0px 0px 3px 1px #0000001a;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 30px;
+    padding-top: 10px;
+}
+#list-promo header{ 
+    margin-top: 25px;
+    min-height: 50px; 
+    height: 50px;
+}
+#list-promo  header .content-left .nb-promo{
+    color: var(--color-primary);
+}
+#list-promo header>div{
+    min-height: 40px;
+}
+#list-promo header .content-right{
+    width: 30%;
+    min-width: 300px;
+    gap: 10px;
+    height: 45px;
+}
+#list-promo header .content-right .search{
+    height: 100%;
+    min-width: 300px;
+    position: relative;
+}
+#list-promo header .content-right .search input{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--color-grey);
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 1.1em;
+
+    &::placeholder{
+        color: var(--color-dark-grey);
+    }
+}
+#list-promo header .content-right .search .icon{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+}
+#list-promo header .content-right #btn-add{
+    min-width: 120px;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    height: 100%;
+    text-transform: capitalize;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 16px;
+}
+#promotion table{ 
+    gap: 0; 
+    width: 100%;
+    padding-bottom: 3em;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+#promotion table tr{
+    display: flex;
+    margin-bottom: 4px;
+}
+#promotion table td{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-wrap: wrap;
+    min-height: 40px;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+#promotion table td:nth-child(1) .head::after{
+    content: "Libelle";
+}
+#promotion table td:nth-child(2) .head::after{
+    content: "Date Début";
+}
+#promotion table td:nth-child(3) .head::after{
+    content: "Date Fin";
+}
+#promotion table td:nth-child(4) .head::after{
+    content: "Status";
+}
+#promotion table td:nth-child(5) .head::after{
+    content: "Action";
+}
+#promotion table td span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+#promotion table td .head{
+    background-color: #b7dfdf33;
+    height: 0px;
+    display: none;
+    border-right: 1px solid;
+}
+#promotion table td .promo-name{
+    font-size: 1.1em;
+    font-weight: 700;
+    color: green;
+}
+#promotion table td:last-child .head{
+    border-right: none; 
+}
+#promotion table td .content{
+    position: relative;
+}
+#promotion table td:nth-last-child(2) .content.active::after{
+    background-color: lime;
+    color: black;
+}
+#promotion table td:nth-last-child(2) .content::after{
+    position: absolute;
+    min-width: 90px;
+    width: 70%;
+    height: 90%;
+    background-color: red;
+    border-radius: 10px;
+    content: attr(data-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: var(--color-white);
+}
+#promotion table td .content .icon{
+    margin-right: 5px;
+    font-size: 2em;
+}
+#promotion table td .form-check{
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+#promotion table td .form-check a,
+#promotion table td .form-check input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+}
+#promotion table td .form-check input{
+    background-color: var(--color-grey);
+}
+#promotion table td .form-check input:not(:checked){
+    appearance: none;
+}
+#promotion table td:last-child .content a{
+    opacity: 0;
+}
+#promotion table tr:first-child td .head{ display: flex; }
+
+
+
+/* Le style pour la création d'une promotion */
+#promotion .head-promo{
+    width: auto;
+    min-height: 50px;
+    align-items: center;
+}
+#promotion .head-promo .decor{
+    min-height: 45px;
+    min-width: 45px;
+    height: 45px;
+    width: 45px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+#promotion #parti1 .head-promo .decor.second{
+    background-color: #F8F8FF;
+}
+#promotion #parti1 .head-promo .decor.second span{
+    color: var(--color-primary);
+}
+#promotion .head-promo .decor a,
+#promotion .head-promo .decor span{
+    font-size: 1.6em;
+    font-weight: 800;
+    color: white;
+}
+#promotion .head-promo>span{
+    margin-left: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#promotion .content-promo,
+#promotion .content-ref{
+    width: calc(100% - 10px);
+    padding-left: 50px;
+    padding-top: 20px;
+    border-left: 2px solid var(--color-grey);
+    gap: 10px;
+    transform: translateX(24px) translateY(-1px);
+}
+#promotion .content-promo .form,
+#promotion .content-promo form{
+    width: 100%;
+    gap: 20px;
+}
+#promotion #parti2 .content-promo {
+    min-height: 60px;
+}
+#promotion .content-promo .ligne{
+    min-height: 80px;
+    width: 100%;
+    position: relative;
+}
+#promotion .content-promo .ligne .box{ 
+    flex: 1; 
+    min-height: 80px;
+    position: relative;
+    gap: 10px;
+    width: 100%;
+
+}
+#promotion .content-promo .ligne .saisie{
+    position: relative;
+    min-height: 50px;
+}
+#promotion .content-promo .ligne .saisie input{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--color-grey);
+    position: absolute;
+    font-size: 1em;
+}
+#promotion .content-promo .ligne .saisie input[type="text"]{
+    padding-left: 50px;
+}
+#promotion .content-promo .ligne .saisie input[type="date"]{
+    padding: 0 20px;
+}
+#promotion .content-promo .ligne .saisie input[type="date"]::-webkit-calendar-picker-indicator{
+    font-size: 1.5em;
+}
+#promotion .content-promo .ligne2{
+    gap: 30px;
+}
+#promotion .content-promo .buttons .btn{
+    min-height: 50px;
+    padding: 10px 30px;
+    min-width: 150px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    color: white;
+    border-color: transparent;
+}
+#promotion .content-promo .buttons .btn:first-child{
+    background-color: var(--color-blue);
+}
+#promotion .content-promo .buttons .btn:last-child{
+    background-color: var(--color-primary);
+}
+#promotion .head-promo:last-child .decor span{
+    color: var(--color-primary);
+}
+#promotion .content-ref{
+    border-color: transparent;
+    padding-top: 5px;
+}
+#promotion .content-ref>span{
+    font-size: 1.2em;
+}
+
+#promotion .content-ref ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#promotion .content-ref ul li{
+    list-style: none;
+    padding-left: 20px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+#promotion .content-ref ul li .checkbox{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+#promotion .content-ref ul li .checkbox .mask,
+#promotion .content-ref ul li .checkbox input{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+#promotion .content-ref ul li .checkbox .mask{
+    z-index: -1;
+}
+#promotion .content-ref ul li .checkbox .mask.active{
+    z-index: 3;
+}
+#promotion .content-ref ul li label{
+    font-size: 1.04em;
+    margin-left: 10px;
+}
+#promotion .content-ref .btns{
+    width: 300px;
+    gap: 10px;
+    min-height: 50px;
+}
+#promotion .content-ref .btns button{
+    padding: 10px 30px;
+    text-transform: capitalize;
+    font-size: 1em;
+    border-radius: 5px;
+    border-color: transparent;
+}
+#promotion .content-ref .btns button a{
+    height: 100%;
+    width: 100%;
+}
+#promotion .content-ref #btn-return,
+#promotion .content-ref #btn-return a{
+    background-color: rgb(242, 240, 240);
+    color: black;
+}
+#promotion .content-ref #btn-create{
+    color: white;
+    background-color: var(--color-primary);
+}
+
+#promotion #msg-active.active{
+    display: flex;
+}
+#promotion #msg-active{
+    height: 100px;
+    width: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    box-shadow: 0px 0px 3px 4px #0000001a;
+    background-color: #F8F8FF;
+    z-index: 99;
+}
+#promotion #msg-active .close{
+    height: 35px;
+    position: absolute;
+    background-color: red;
+    width: 35px;
+    top: 2px; right: 5px;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+}
+#promotion #msg-active .msg{
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+@media screen and (max-width:700px) {
+    #promotion #parti1 form .ligne2,
+    #promotion #parti2 form .ligne2{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:600px){
+    #promotion .content-promo .buttons{
+        flex-direction: column;
+        gap: 10px;
+    }
+    #promotion .content-promo .buttons .btn{
+        flex: 1;
+        width: 100%;
+    }
+}

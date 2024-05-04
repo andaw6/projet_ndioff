@@ -1,0 +1,941 @@
+#apprenant header{
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+#apprenant #header1{
+    height: 80px;
+}
+#apprenant #header1 .content-right{
+    font-size: .8em;
+}
+#apprenant #header2{
+    min-height: 100px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: 800;
+}
+#apprenant #header2>div{
+    margin-bottom: 1em;
+}
+#apprenant #header2 #select select{
+    font-size: 1em;
+    background-color: transparent;
+    font-weight: bold;
+}
+#apprenant #header2 #select button{
+    width: 20px;
+    height: 20px;
+    font-size: 1.1em;
+}
+#apprenant .info{ color: var(--color-primary);}
+
+#liste-apprenant{
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    position: relative;
+}
+#head-decor{
+    width: auto;
+    min-height: 50px;
+    align-items: center;
+    gap: 15px;
+}
+#head-decor .decor{
+    height: 45px;
+    width: 45px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    font-size: 2em;
+}
+#head-decor>span{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#content-head{
+    width: calc(100% - 10px);
+    padding-left: 50px;
+    padding-top: 20px;
+    border-left: 2px solid var(--color-grey);
+    gap: 10px;
+    transform: translateX(24px) translateY(-3px);
+}
+#content-head .header{
+    width: 100%;
+    min-height: 50px;
+}
+#content-head .header .content-left{
+    font-size: 1.1em;
+    font-weight: 700;
+}
+#content-head .header .content-right{
+    gap: 10px;
+}
+#content-head .header .content-right>div{
+    gap: 10px;
+}
+#content-head .header .btn{
+    height: 50px;
+    width: max-content;
+    padding: 10px 20px;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: white;
+}
+#content-head .header .btn .icon{
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+#content-head .btn.add{
+    background-color: var(--color-primary);
+}
+#content-head .btn.insert{
+    background-color: #ff8c00;
+}
+#content-head .btn.file{
+    background-color: #01889F;
+}
+#content-head .btn.list{
+    background-color: #1450AA;
+}
+#content-head .search{
+    width: 100%;
+    min-height: 50px;   
+    gap: 10px;
+    margin-bottom: 5px;
+}
+#content-head .search #form{
+    align-items: center;
+    gap: 3px;
+}
+#content-head .search #confirm{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    border-color: #01889F;
+}
+#content-head .search #confirm{
+    background-color: #008000;
+}
+#content-head .search #confirm i{
+    font-size: 2em;
+    color: white;
+}
+#content-head .content-search{
+    width: calc(100% - 50px);
+    height: 70px;
+    position: relative;
+}
+#content-head .content-search input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    font-size: 1em;
+    border: 2px solid #C1C0C4;
+    
+    &::placeholder{
+        font-weight: 500;
+        color: #C1C0C4;
+    }
+}
+#content-head .content-search .icon{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 20px;
+    top: calc(50% - 15px);
+    font-size: 1.7em;
+    color: #C1C0C4;
+}
+
+#content-head .search .box-icon{
+    height: 50px;
+    width: 50px;
+}
+#content-head .search .box-icon img{
+    width: 100%;
+    object-fit: cover;
+} 
+
+
+
+#apprenant table{ 
+    gap: 0; 
+    width: 100%;
+    padding-bottom: 3em;
+    border-collapse: collapse;
+}
+
+#apprenant table tr{
+    display: flex;
+    margin-bottom: 10px;
+}
+#apprenant table td{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-wrap: wrap;
+    min-height: 40px;
+}
+#apprenant table td:nth-child(3),
+#apprenant table td:nth-child(4){
+    flex: 2;
+}
+#apprenant table td:nth-last-child(2){
+    flex: 1.5;
+}
+
+#apprenant table td:nth-child(1) .head::after{
+    content: "Image";
+}
+#apprenant table td:nth-child(2) .head::after{
+    content: "Nom";
+}
+#apprenant table td:nth-child(3) .head::after{
+    content: "Prenom";
+}
+#apprenant table td:nth-child(4) .head::after{
+    content: "Email";
+}
+#apprenant table td:nth-child(5) .head::after{
+    content: "Genre";
+}
+#apprenant table td:nth-child(6) .head::after{
+    content: "Téléphone";
+}
+#apprenant table td:nth-child(7) .head::after{
+    content: "Action";
+}
+
+#apprenant table td span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+#apprenant table td .head{
+    background-color: #b7dfdf33;
+    height: 0px;
+    display: none;
+    border-right: 1px solid;
+}
+#apprenant table td:last-child .head{
+    border-right: none; 
+}
+#apprenant table tr:first-child td .head{ display: flex; }
+#apprenant table tr.remove .content{
+    display: none
+}
+
+
+#apprenant table td .content{
+    border-bottom: 1px solid var(--color-primary);
+    text-transform: capitalize;
+}
+#apprenant table td .content.upper{
+    text-transform: uppercase;
+}
+#apprenant table td .content select{
+    font-size: 1.1em;
+    background-color: transparent;
+}
+#apprenant table td .content span{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+
+}
+#apprenant table td .content img{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#apprenant table td .content a{
+    height: 30px;
+    width: 30px;
+    background-color: #808080;
+}
+#apprenant table td .active{
+    color: green;
+    font-weight: 700;
+}
+#apprenant table td .desactive{
+    color: red;
+    font-weight: 700;
+}
+#apprenant table .boxInfo{
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: red;
+    text-shadow: 2px 5px 3px  rgba(0, 0, 0, 0.5);
+}   
+
+/* Le style pour les pages d'ajoute nouveau apprenant via une formulaire */
+#block-add{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 100;
+}
+#block-add #add1.user-add2{
+    height: 700px;
+}
+
+#block-add #add1{
+    height: 800px;
+    width: 1200px;
+    border: 1px solid;
+    background-color: var(--color-white);
+}
+#block-add #add1 .header{
+    height: 70px;
+    background-color: rgb(231, 227, 227);
+    padding: 20px;
+    font-size: 1.4em;
+}
+#block-add .header .close{
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+#block-add .header .close:hover{
+    background-color: red;
+}
+#block-add .content-add{
+    height: calc(100% - 70px);
+    padding: 30px;
+} 
+#block-add .content-add .head{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#block-add .separator{
+    width: 48%;
+    height: 0;
+    border: 1px solid black;
+}
+#block-add .head-user:first-child{
+    width: max-content;
+    min-width: 100px;
+}
+#block-add .head-user{
+    width: auto;
+    min-width: 300px;
+    min-height: 50px;
+    align-items: center;
+}
+#block-add .head-user .decor{
+    min-height: 45px;
+    min-width: 45px;
+    height: 45px;
+    width: 45px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+#block-add #add1 .head-user .decor.second{
+    background-color: #F8F8FF;
+}
+#block-add #add1 .head-user .decor.second span{
+    color: var(--color-primary);
+}
+#block-add .head-user .decor a,
+#block-add .head-user .decor span{
+    font-size: 1.6em;
+    font-weight: 800;
+    color: white;
+}
+
+#block-add .head-user>span{
+    margin-left: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#block-add .profil{
+    height: 130px;  
+    width: 100%;
+}
+#block-add .profil .logo{
+    height: 100px;
+    width: 100px;
+    border: 2px solid var(--color-grey);
+    border-radius: 50%;
+    background-color: var(--color-grey);
+    position: relative;
+}
+#block-add .profil .logo::before{
+    content: "200x300";
+    position: absolute;
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: var(--color-dark-grey);
+}
+#block-add .profil .logo.disable::before{
+    content: "";
+}
+#block-add .profil .logo input{
+    display: none;
+}
+#block-add .profil .logo img{
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+#block-add .form-add{
+    height: calc(100% - 200px);
+    position: relative;
+}
+#block-add .user-add2 .form-add{
+    height: calc(100% - 90px);
+    padding: 0 20px;
+}
+#block-add .form-add .content-form{
+    height: calc(100% - 50px);
+    padding: 2px;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+#block-add .user-add2 .form-add 
+.content-form .block{
+    margin-bottom: 10px;
+}
+
+#block-add .form-add .content-form .block{
+    width: 49%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.3em;
+    position: relative;
+} 
+#block-add .user-add2 .form-add .content-form .block input{
+    height: 60px;
+    padding-top: 15px;
+}
+#block-add .user-add2 .form-add .content-form .block input[type="text"]{
+    padding-left: 3.5em;
+    padding-top: 20px;
+}
+#block-add .form-add .content-form .block select,
+#block-add .form-add .content-form .block input{
+    height: 60px;
+    margin-left: 3px;
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: .8em;
+}
+#block-add .form-add .content-form .block select{
+    padding: 0 20px;
+    background-color: var(--color-white);
+}
+
+#block-add .form-add .foot{
+    height: 50px;
+}
+#block-add .user-add2 .form-add .foot{
+    justify-content: end;
+    gap: 15px;
+}
+#block-add .user-add2 .form-add .foot button:first-child{
+    background-color: var(--color-white-ghost);
+    color: black;
+}
+#block-add .form-add .foot button{
+    height: 100%;
+    width: 130px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#block-add .form-add .foot button.create{
+    width: max-content;
+    padding: 10px 20px;
+}
+
+#block-add #add1 .box-input{
+    position: relative;
+}
+#block-add #add1 span.msg-error{
+    font-size: .7em;
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    display: none;
+    color: red;
+}
+#block-add #add1 span.msg-error.active{
+    display: block;
+}
+
+#block-add #add1 .box-input img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    display: none;
+}
+#block-add #add1 .box-input img.show{
+    width: 500px;
+    height: 500px;
+    z-index: 3;
+    top: -300px;
+    left: 250px;
+    border-radius: 5px;   
+}
+#block-add #add1 .box-input img.active{
+    display: block;
+}
+#block-add #add1 .error-msg{
+    color: red;
+    font-size: 1.2em;
+    position: absolute;
+    left: 15%;
+    bottom: 10px;
+    display: none;
+}
+#block-add #add1 .error-msg.active{ display: block; }
+#block-add #drop{
+    width: 65%;
+    height: 400px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+}
+#block-add #drop .drop{
+    width: 100%;
+    height: calc(100% - 90px);
+    background-color: var(--color-white);
+    padding: 30px;
+}
+#block-add #drop .drop label{
+    border: 2px solid;
+    padding: 2px;
+    border-radius: 5px;
+}
+#block-add #drop .header{
+    height: 50px;
+}
+#block-add #drop .footer{
+    height: 90px;
+    background-color: var(--color-background);
+    padding: 30px;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+#block-add #drop .footer button{
+    height: 40px;
+    width: max-content;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-white);
+}
+#block-add #drop .footer button:first-child{
+    background-color: red;
+}
+#block-add #drop .footer button:last-child{
+    background-color: var(--color-primary);
+}
+#block-add #drop .content-drop{
+    height: calc(100% - 50px);
+}
+#block-add #drop .drag-and-drop{
+    height: 100%;
+    width: 100%;
+    border: 2px dashed;
+    border-radius: 10px;
+}
+
+#block-add .show-insert{
+    height: 80%;
+    width: 70%;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
+#block-add .show-insert .header{
+    height: 140px;
+    width: 100%;
+}
+#block-add .show-insert .box-close{
+    height: 45%;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--color-background);
+    font-size: 1.2em;
+    border-radius: 20px;
+    padding-right: 20px;
+}
+#block-add .show-insert .box-head{
+    height: 55%;
+}
+#block-add .show-insert .box-head .head{
+    height: 80%;
+    width: max-content;
+    padding: 0 20px;
+    border: 2px solid;
+    border-top: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#block-add .show-insert .header h1{
+    text-transform: uppercase;
+}
+#block-add .show-insert .content-result{
+    height: calc(100% - 140px);
+    width: 100%;
+    overflow-y: auto;
+    border-radius: 0 0 20px 20px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+#block-add .show-insert .table{
+    height: max-content;
+    gap: 10px;
+}
+#block-add .show-insert .table .head{
+    height: 50px;
+    align-items: center;
+    font-size: 1.2em;
+    background-color: var(--color-grey);
+    padding: 0 20px;
+    border-radius: 10px;
+}
+#block-add .show-insert .table .col{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#block-add .show-insert#exclus .table .row:nth-child(odd){
+    background-color: #808080;
+}
+#block-add .show-insert#exclus .table .col:nth-child(1), 
+#block-add .show-insert .table .head .col:nth-child(4),
+#block-add .show-insert .table .col:nth-child(4){
+    flex: 2;
+}
+#block-add .show-insert .table .head .col{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+#block-add .show-insert .table .info{
+    padding: 0 20px;
+    height: 40px;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-bottom: 2px solid var(--color-grey);
+}
+
+#block-add .show-insert .table .detail{
+    width: 100%;
+    background-color: rgb(101, 165, 230);
+    border-radius: 10px;
+    min-height: 200px;
+    display: none;
+    margin-bottom: 20px;
+}
+#block-add .show-insert .table .detail-close{
+    height: 40px;
+    justify-content: end;
+    padding: 20px;
+    padding-right: 10px;
+}
+#block-add .show-insert .table .close{
+    font-size: 1.2em;
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+}
+#block-add .show-insert table .valider{
+    color: green;
+    text-transform: capitalize;
+}
+#block-add .show-insert table .existe,
+#block-add .show-insert table .non{
+    color: red;
+    text-transform: capitalize;
+}
+#block-add .show-insert table .peut{
+    color: #ff8c00;
+    text-transform: capitalize;
+}
+#block-add .show-insert .table .close:hover{
+    background-color: red;
+    border-color: transparent;
+}
+#block-add .show-insert table tr{
+    height: 40px;
+}
+#block-add .show-insert table{
+    padding-bottom: 20px;
+}
+#block-add .show-insert table tr th,
+#block-add .show-insert table tr td{
+    text-align: center;
+}
+#block-add .show-insert col.oui{
+    color: #32e432;
+}
+#block-add .show-insert col.non{
+    color: red;
+}
+
+
+/* Le style pour la sélection multiple */
+#multiple{
+    height: 30px;
+    border-bottom: 1px solid;
+    z-index: 100;
+    min-width: 150px;
+    width: max-content;
+    overflow: hidden;
+}
+#multiple.active{
+    overflow: visible;
+}
+#multiple .select-content{
+    background-color: var(--color-white);
+    padding: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: max-content;
+    margin-top: 5px;
+}
+#multiple .select-label{
+    position: relative;
+    width: 100%;
+}
+#multiple .select-label input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+}
+
+
+/* Le style pour la page action dans apprenant */
+#card{
+    width: 550px;
+    height: 800px;
+    border: 2px solid;
+    border-radius: 15px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+#card .background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    border-radius: inherit;
+}
+#card .background .bg-line{
+    height: 30px;
+    width: 150%;
+    border-bottom: 1px solid goldenrod;
+    transform: rotate(-35deg) translateX(-50px) translateY(-255px);
+}
+#card .background a{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 35px;
+    width: 35px;
+    font-size: 2em;
+    border-radius: 10px;
+}
+#card .background a:hover{
+    background-color: red;
+}
+#card .background .carre{
+    background-color: var(--color-primary);
+    position: absolute;
+}
+#card .background .carre:nth-child(1){
+    height: 25px;
+    width: 25px;
+    right: 25%;
+    top: 5%;
+}
+#card .background .carre:nth-child(2){
+    height: 10px;
+    width: 125px;
+    right: 0%;
+    top: 18%;
+}
+#card .background .carre:nth-child(3){
+    height: 30px;
+    width: 30px;
+    left: 8%;
+    top: 20%;
+}
+#card .background .carre:nth-child(4){
+    height: 25px;
+    width: 65px;
+    left: 0%;
+    top: 36%;
+}
+#card .background .carre:nth-child(5){
+    height: 160px;
+    width: 2px;
+    left: 7%;
+    top: 43%;
+}
+#card .background .carre:nth-child(6){
+    height: 2px;
+    width: 100px;
+    right: 0%;
+    top: 53%;
+}
+#card .background .carre:nth-child(7){
+    height: 45px;
+    width: 45px;
+    right: 10%;
+    bottom: 27%;
+}
+#card .background .carre:nth-child(8){
+    height: 2px;
+    width: 140px;
+    right: 2%;
+    bottom: 19%;
+}
+#card .background .carre:nth-child(9){
+    height: 40px;
+    width: 3px;
+    right: 25%;
+    bottom: 9%;
+}
+#card .background .carre:nth-child(10){
+    height: 15px;
+    width: 70px;
+    left: 0%;
+    bottom: 15%;
+}
+#card .background .carre:nth-child(11){
+    height: 85px;
+    width: 85px;
+    right: 5%;
+    bottom: 7.6%;
+    border-radius: 5px;
+}
+#card .background .carre:nth-child(12){
+    height: 50px;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    justify-content: space-evenly;
+    color: var(--color-white);
+}
+#card .background .card-user{
+    height: 320px;
+    width: 320px;
+    border: 1px solid;
+    position: relative;
+    transform: translateY(-20px) translateX(15px);
+    background-color: #108aa0;
+}
+#card .background .card-user .card{
+    height: calc(100% - 30px);
+    width: calc(100% - 40px);
+    border: 1px solid var(--color-white);
+    border-top: 0;
+    border-left: 0;
+}
+#card .background .card-user .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#card .background:last-child{
+    border-radius: 0;
+}
+#card .background .logo{
+    position: absolute;
+    display: block;
+    height: 55px;
+    width: 150px;
+    object-fit: cover;
+    top: 5%;
+    left: 15%;
+}
+#card .background .promo-info{
+    position: absolute;
+    bottom: 15%;
+    left: 18%;
+}
+#card .background .user-name{
+    position: absolute;
+    left: 18%;
+    bottom: 18%;
+    font-size: 2.6em;
+}
+#card .background .user-name span{
+    text-transform: capitalize;
+}
+#card .background .user-name .fname{
+    font-weight: 500;
+}
+#card .background .user-name .lname{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#qr{
+    height: 100%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}

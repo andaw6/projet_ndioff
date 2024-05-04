@@ -1,0 +1,264 @@
+#presence>div{
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    padding: 3px 20px;
+}
+
+/* Le style pour l'en-tête de la page */
+#presence header{
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+#presence #header1{
+    height: 80px;
+}
+#presence #header1 .content-right{
+    font-size: .8em;
+}
+#presence #header2{
+    min-height: 100px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: 800;
+}
+#presence #header2>div{
+    margin-bottom: 1em;
+}
+#presence #header2 #select select{
+    font-size: 1em;
+    background-color: transparent;
+    font-weight: bold;
+}
+#presence #header2 #select button{
+    width: 20px;
+    height: 20px;
+    font-size: 1.1em;
+
+}
+
+
+/* Le style pour le formulaire de filtre */
+#presence #filter{
+    min-height: 120px;
+    width: 60%;
+    gap: 20px;
+    align-items: center;
+    color: var(--color-grey);
+}
+#presence #filter select{
+    font-size: 1.1em;
+    background-color: transparent;
+    padding: 8px;
+    color: var(--color-grey);
+}
+#presence #filter select option{
+    text-transform: capitalize;
+}
+#presence #filter input{
+    color: var(--color-grey);
+    font-size: 1.3em;    
+}
+
+#presence #filter .boite{
+    height: 70px;
+    border: 2px solid;
+    flex: 1;
+    border-radius: 10px;
+}
+#presence #filter .reference{
+    flex: 2;
+}
+#presence #filter .reference select{
+    padding: 30px;
+}
+#presence #filter .clandrier{
+    flex: 3;
+    padding: 0 10px;
+}
+#presence #filter .button{
+    flex: 1.8;
+    padding: 0;
+    border: none;
+    height: 55px;
+    min-width: 150px;
+}
+#filter .button button{
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    border-color: transparent;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 600;
+    background-color: var(--color-primary);
+    offset: 0;
+    color: white;
+    font-size: 1.2em;  
+}
+
+#presence table{ 
+    gap: 0; 
+    width: 100%;
+    padding: 20px 3em;
+    border-collapse: collapse;
+}
+
+#presence table tr{
+    display: flex;
+    margin-bottom: 10px;
+}
+#presence table td{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-wrap: wrap;
+    min-height: 40px;
+}
+
+#presence table td .hd-mat.head::after{
+    content: "Matricule";
+}
+#presence table td .hd-nom.head::after{
+    content: "Nom";
+}
+#presence table td .hd-prenom.head::after{
+    content: "Prenom";
+}
+#presence table td .hd-tel.head::after{
+    content: "Téléphone";
+}
+#presence table td .hd-ref.head::after{
+    content: "Référentiel";
+}
+#presence table td .hd-date.head::after{
+    content: "Date";
+}
+#presence table td .hd-heure.head::after{
+    content: "Heure";
+}
+#presence table td .hd-status.head::after{
+    content: "Status";
+}
+
+
+#presence table td span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+#presence table td .head{
+    background-color: #b7dfdf33;
+    height: 0px;
+    display: none;
+}
+#presence table tr:first-child td .head{ display: flex; }
+#presence table tr.remove .content{
+    display: none
+}
+
+
+#presence table td .content{
+    border-bottom: 1px solid var(--color-primary);
+    text-transform: capitalize;
+}
+#presence table td .content.upper{
+    text-transform: uppercase;
+}
+#presence table td .content span{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+
+}
+/* #presence table td:nth-last-child(2) .content,
+#presence table td:nth-child(1) .content{
+    color: #008000;
+} */
+#presence table td .content.oui{
+    color: #ff0000;
+}
+#presence table td .content.non{
+    color: #008000;
+}
+
+#presence table td .content.present span{
+    color: rgb(18, 72, 72);
+
+    background-color: #b7dfdf33;
+}
+#presence table td .content.absent span{
+    color: #c42e23;
+    background-color: #e66b4566;
+}
+
+
+
+
+/* Le style pour la responsivité */
+
+@media screen and (max-width: 1400px) {
+    #presence #filter{
+        width: 100%;
+        flex-wrap: wrap;
+    } 
+    #presence table{ gap: 20px; }  
+    #presence table td .head{ display: flex; }
+    #presence table tr{
+        box-shadow: 0px 0px 2px 2px rgb(236, 225, 225);
+        border-radius: 10px;
+        flex-direction: column;
+    }
+    #presence table tr:hover{
+        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.6);
+    }
+    #presence table td{
+        width: 100%;
+        flex-direction: row;
+        margin-bottom: 5px;
+        padding: 0 10px;
+    }
+    #presence table td .content,
+    #presence table .head{
+        flex: 1;
+        border-radius: 0 0 10px 10px;
+        border-bottom: 2px solid var(--DustyTeal);
+    }
+    #presence table td .head{
+        background-color: inherit;
+    }
+    #presence table .ligne td .head{
+        display: flex;
+    }
+    #presence table td{
+        border-bottom: 1px solid;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #presence table tr{
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    #presence table td{
+        flex-direction: column;
+        border-bottom: 2px solid;
+        border-radius: 0 0 20px 20px;
+        margin-bottom: 10px;
+        gap: 0;
+    }
+    #presence table td .content{
+        border: none;
+    }
+    #presence table tr td .head{
+        display: flex;
+    }
+}

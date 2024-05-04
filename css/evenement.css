@@ -1,0 +1,336 @@
+#evenement{
+    background-color: var(--color-white);
+    padding: 50px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+#evenement .content-event{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding-bottom: 5px;
+    padding: 30px;
+}
+#evenement header{
+    min-height: 150px;
+    height: max-content;
+}
+#evenement header>div{
+    flex: 1;
+    width: 100%;
+}
+#evenement #header1 .content-right{
+    align-items: center;
+    gap: 10px;
+}
+#evenement #header1 button:first-child{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+#evenement #header1 button{
+    width: max-content;
+    min-width: 130px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 600;
+    height: 50px;
+}
+#evenement #header1 .saisi{
+    height: 60px;
+    width: 300px;
+    position: relative;
+}
+#evenement #header1 .saisi input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    font-size: 1em;
+}
+#evenement #header1 .saisi span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#evenement #header1 .saisi .required{
+    color: red;
+    right: 25%;
+}
+#evenement #header1 .saisi .icon{
+    height: 25px;
+    width: 25px;
+    border: 1px solid;
+    right: 30px;
+}
+#evenement #header2 .content-right{
+    gap: 10px;
+}
+#evenement #header2 .content-left{
+    font-size: 1.8em;
+    font-weight: 900;
+}
+#evenement #header2 .btn{
+    height: 40px;
+    min-width: 120px;
+    border-radius: 8px;
+    border: 1px solid;
+    background-color: black;
+    color: var(--color-white);
+    cursor: pointer;
+}
+#evenement #header2 .swicth{
+    width: 90px;
+    height: 40px;
+    border: 1px solid;
+    background-color: black;
+    border-radius: 8px;
+    gap: 2px;
+}
+#evenement #header2 .swicth a{
+    flex: 1;
+    height: 100%;
+    border-radius: inherit;
+    color: var(--color-white);
+    font-size: 1.5em;
+}
+#evenement #header2 .swicth a:hover{
+    background-color: aquamarine;
+    color: black;
+}
+#evenement #event{
+    margin-top: 20px;
+    height: 650px;
+    width: 100%;
+}
+#evenement #event div{
+    border-bottom: 1px solid var(--color-grey);
+    border-right: 1px solid var(--color-grey);
+}
+#evenement #event .left{
+    width: 70px;
+    height: 100%;
+    border-left: 2px solid var(--color-grey);
+    border-top: 2px solid var(--color-grey);
+}
+#evenement #event .right{
+    width: calc(100% - 70px);
+    height: 100%;
+    border-top: 2px solid var(--color-grey);
+    position: relative;
+}
+#evenement #event>div .head div.first{
+    height: 50px;
+    font-weight: 600;
+}
+#evenement #event>div .head div.last{
+    height: 65px;
+}
+#evenement #event .left .head div.last{
+    justify-content: space-evenly;
+    font-weight: 600;
+    gap: 0;
+    padding: 2px;
+}
+#evenement #event .left .head div.last span{
+    line-height: 10px;
+}
+#evenement #event .ligne,
+#evenement #event .right .head>div{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+    border: 0;
+}
+
+#evenement #event .content{
+    display: grid;
+    height: calc(100% - 115px);
+    grid-template-rows: repeat(16, 1fr);
+}
+#evenement #event #calendar{
+    position: absolute;
+    height: calc(100% - 115px);
+    width: 100%;
+    top: 115px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+#evenement #event #calendar .event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#block-add{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 100;
+}
+#block-add #add-event{
+    height: 80%;
+    width: 60%;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+#block-add #add-event .header{
+    height: 140px;
+    width: 100%;
+}
+#block-add .header .close{
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+#block-add .header .close:hover{
+    background-color: red;
+}
+#block-add #add-event .box-close{
+    height: 45%;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--color-background);
+    font-size: 1.2em;
+    border-radius: 20px;
+    padding-right: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+#block-add #add-event .box-head{
+    height: 55%;
+}
+#block-add #add-event .box-head .head{
+    height: 80%;
+    width: max-content;
+    padding: 0 20px;
+    border: 2px solid;
+    border-top: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+#block-add #add-event .header h1{
+    text-transform: uppercase;
+}
+#block-add #add-event #form{
+    height: calc(100% - 135px);
+    padding: 30px;
+    gap: 20px;
+} 
+#block-add #form .content-form{
+    height: calc(100% - 70px);
+    gap: 30px;
+}
+#block-add #form .form .line,
+#block-add #form .form{
+    gap: 30px;
+}
+#block-add #form .content-form>div,
+#block-add #form .form .line .block,
+#block-add #form .form .line{ flex: 1;}
+#block-add #form .form-desc{flex: 1.5;}
+#block-add #form .form-desc textarea{
+    height: 100%;
+    width: 100%;
+    border: 2px solid;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    padding: 20px;
+    font-size: 1.4em;
+    font-family: inherit;
+    color: var(--color-grey);
+    &::placeholder{
+        color: var(--color-grey);
+        font-family: inherit;
+    }
+}
+#block-add #form .block label{
+    display: block;
+    height: 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#block-add #form .block .saisi{
+    height: 55px;
+    width: 100%;
+    position: relative;
+}
+#block-add #form .block .saisi input{
+    position: absolute;
+    height: 100%;
+    width: 98%;
+    border: 2px solid;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 1.1em;
+    color: var(--color-grey);
+    &::placeholder{
+        color: var(--color-grey);
+    }
+}
+#block-add #form .block .saisi .msg-error.active{
+    display: block;
+}
+#block-add #form .block .saisi .msg-error{
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    color: red;
+    display: none;
+}
+#block-add #add-event #form .footer{
+    height: 70px;
+    padding: auto 20px;
+}
+#block-add #add-event #form .footer  button{
+    height: 55px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+    cursor: pointer;
+}
+#block-add #add-event #form .footer .cancel{
+    background-color: var(--color-background);
+    color: black;
+    border: 1px solid var(--color-grey);
+    display: none;
+}
+#block-add #add-event #form .footer .cancel.active{
+    display: block;
+}
